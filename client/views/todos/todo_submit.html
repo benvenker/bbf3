@@ -1,0 +1,38 @@
+<template name="todoSubmit">
+  <form class="main">
+    <!-- Name your Todo -->
+    <div class="control-group">
+        <label class="control-label" for="title">Title</label>
+        <div class="controls">
+            <input name="title" type="text" value="" placeholder="Name your post"/>
+        </div>
+    </div>
+
+    <!-- Set its frequency -->
+		<div class="control-group">
+			<label class="control-label" for="url">Frequency</label>
+			<div class="controls">
+				<!--input name="frequency" type="text" value="" placeholder="Frequency"/-->
+				<select name="frequency">
+					<option value="Daily">Daily</option>
+					<option value="Weekly">Weekly</option>
+					<option value="Monthly">Monthly</option>
+					<option value="Annually">Annually</option>
+				</select>
+			</div>
+		</div>
+	<!-- Add a detailed message -->
+    <div class="control-group">
+        <label class="control-label" for="message">Message</label>
+        <div class="controls">
+            <textarea name="message" type="text" value="" placeholder="Notes"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </div>
+    </div>
+  </form>
+</template>
