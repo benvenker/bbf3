@@ -8,7 +8,13 @@ Template.todoSubmit.events({
       message: $(e.target).find('[name=message]').val()
     }
     
-    todo._id = Todos.insert(todo);
-    Meteor.Router.to('todoPage', todo);
+    // create a meteor Method, 'todo', and attach a callback, which will execute
+    // when the server-side Method is done.
+    Meteor.call('todo', todo, function(error, id) {
+      if (error)
+        return alert(error.reson);
+
+      Meteor.Router.to('todoPage', id);
+    });
   }
 });
