@@ -1,8 +1,16 @@
 Todos = new Meteor.Collection('todos');
+
 Todos.allow({
 	update: ownsDocument,
 	remove: ownsDocument
 });
+
+/*Todos.deny({
+	update: function(userId, todo, fieldNames) {
+		// may only edit the following two fields:
+		return (_.without(fieldNames, 'title', 'frequency').length > 0);
+	}
+}); */
 
 // define Meteor method 'todo'
 Meteor.methods({
