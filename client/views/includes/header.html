@@ -9,7 +9,7 @@
       <a class="brand" href="{{todosListPath}}">BetterBoyfriend</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a href="{{todoSubmitPath}}">New</a></li>
+          {{#if currentUser}}<li><a href="{{todoSubmitPath}}">New</a></li>{{/if}}
         </ul>
         <ul class="nav pull-right">
           <li>{{loginButtons}}</li>
