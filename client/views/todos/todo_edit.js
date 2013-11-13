@@ -11,7 +11,6 @@ Template.todoEdit.events({
 		var currentTodoId = Session.get('currentTodoId');
 
 		var todoProperties = {
-			title: $(e.target).find('[name=title]').val(),
       		frequency: $(e.target).find('[name=frequency]').val(),
      		message: $(e.target).find('[name=message]').val()
 		}

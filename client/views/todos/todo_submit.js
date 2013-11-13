@@ -13,8 +13,7 @@ Template.todoSubmit.events({
     Meteor.call('todo', todo, function(error, id) {
       if (error)
         return alert(error.reson);
-
-      Meteor.Router.to('todoPage', id);
     });
+    Meteor.Router.to('todosList');
   }
 });

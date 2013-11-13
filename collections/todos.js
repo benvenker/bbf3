@@ -5,7 +5,7 @@ Todos.allow({
 	remove: ownsDocument
 });
 
-/*Todos.deny({
+/* Todos.deny({
 	update: function(userId, todo, fieldNames) {
 		// may only edit the following two fields:
 		return (_.without(fieldNames, 'title', 'frequency').length > 0);
@@ -29,10 +29,21 @@ Meteor.methods({
 
 		// pick out the whitelisted keys
 		var todo = _.extend(_.pick(todoAttributes, 'title', 'frequency', 'message'), {
+			title: todoAttributes.title + (this.isSimulation ? '(client)' : '(server)'),
 			userId: user._id,
 			author: user.username,
 			submitted: new Date().getTime()
 		});
+
+		// wait for 5 seconds
+		if (! this.isSimulation) {
+			var Future = Npm.require('fibers/future');
+			var future = new Future();
+			Meteor.setTimeout(function() {
+				future.return();
+			}, 5 * 1000);
+			future.wait();
+		}
 
 		var todoId = Todos.insert(todo);
 
