@@ -1,4 +1,8 @@
 Todos = new Meteor.Collection('todos');
+Todos.allow({
+	update: ownsDocument,
+	remove: ownsDocument
+});
 
 // define Meteor method 'todo'
 Meteor.methods({
