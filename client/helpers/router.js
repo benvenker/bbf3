@@ -5,6 +5,10 @@ Meteor.Router.add({
 		to: 'todoPage',
 		and: function(id) { Session.set('currentTodoId', id); }
 	},
+	'/todos/:_id/edit': {
+		to: 'todoEdit',
+		and: function(id) { Session.set('currentTodoId', id); }
+	},
 	
 	'/submit': 'todoSubmit'
 });

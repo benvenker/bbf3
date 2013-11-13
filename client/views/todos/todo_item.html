@@ -1,8 +1,10 @@
 <template name="todoItem">
 	<div class="todo">
 		<div class="todo-content">
-			<h3>{{title}}</h3>
-			{{frequency}}
+			<h3>{{title}}</h3>{{frequency}}
+			<p>
+				{{#if ownTodo}}<a href="{{todoEditPath this}}">Edit</a>{{/if}}
+			</p>
 		</div>
 		<a href="{{todoPagePath this}}" class="discuss btn">Details</a>
 	</div>
