@@ -1,5 +1,10 @@
 <template name="todoPage">
 	{{#with currentTodo}}
 	  {{> todoItem}}
+	  <ul class="comments">
+	  	{{#each comments}}
+  			{{> comment}}
+  		{{/each}}
+  	  </ul>
 	 {{/with}}
 </template>
