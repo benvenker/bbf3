@@ -1,2 +1,4 @@
 Meteor.subscribe('todos');
-Meteor.subscribe('comments');
+Deps.autorun(function() {
+	Meteor.subscribe('comments', Session.get('currentTodoId'));
+});

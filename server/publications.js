@@ -3,5 +3,5 @@ Meteor.publish('todos', function() {
 });
 
 Meteor.publish('comments', function() {
-	return Comments.find();
+	return Comments.find({todoId: todoId});
 });
