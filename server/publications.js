@@ -1,5 +1,5 @@
 Meteor.publish('todos', function() {
-	return Todos.find();
+	return Todos.find({userId: this.userId});
 });
 
 Meteor.publish('comments', function() {

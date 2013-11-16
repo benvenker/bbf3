@@ -31,7 +31,7 @@ Meteor.methods({
 		var todo = _.extend(_.pick(todoAttributes, 'title', 'frequency', 'message'), {
 			userId: user._id,
 			author: user.username,
-			submitted: new Date().getTime()
+			submitted: new Date().getTime(),
 			commentsCount: 0
 		});
 
