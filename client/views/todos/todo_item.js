@@ -7,9 +7,5 @@ Template.todoItem.helpers({
 		var a = document.createElement('a');
 		a.href = this.url;
 		return a.hostname;
-	},
-
-	commentsCount: function() {
-		return Comments.find({todoId: this._id}).count();
 	}
 });

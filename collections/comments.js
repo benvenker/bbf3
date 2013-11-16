@@ -15,6 +15,10 @@ Meteor.methods({
 			author: user.username,
 			submitted: new Date().getTime()
 		});
+
+		// update the todo with the number of comments
+		Todos.update(comment.todoId, {$inc: {commentsCount: 1}});
+		
 		return Comments.insert(comment);
 	}
 });
