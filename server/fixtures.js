@@ -17,7 +17,7 @@ if (Todos.find().count() === 0) {
 
 	var betterBoyfriendId = Todos.insert({
 		title: 'Go for a walk',
-		frequency: 'Weekly'
+		frequency: 'Weekly',
 		commentsCount: 2
 	});
 
@@ -40,7 +40,7 @@ if (Todos.find().count() === 0) {
 		title: 'Do this dishes',
 		userId: tom._id,
 		author: tom.profile.name,
-		frequency: 'Daily'
+		frequency: 'Daily',
 		commentsCount: 0
 	});
 
@@ -48,7 +48,7 @@ if (Todos.find().count() === 0) {
 		title: 'Walk the dogs',
 		userId: tom._id,
 		author: tom.profile.name,
-		frequency: 'Daily'
+		frequency: 'Daily',
 		commentsCount: 0
 	});
 }
